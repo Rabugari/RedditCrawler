@@ -37,7 +37,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 	
 	@SuppressWarnings("deprecation")
 	@Override
-	public void onUpdateReceived(Update update) {
+	public void onUpdateReceived(final Update update) {
 		try {
 			if(update.hasMessage() && update.getMessage().hasText()) {
 				
@@ -61,7 +61,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 	}
 
 	@SuppressWarnings("deprecation")
-	private void sendMessage(String messageReceived, SendMessage message) throws TelegramApiException {
+	private void sendMessage(final String messageReceived, final SendMessage message) throws TelegramApiException {
 		List<String> subReddits = webCrawler.splitThreads(messageReceived.replaceAll(COMMAND_NAME, "").trim());
 		
 		for(String subReddit : subReddits) {

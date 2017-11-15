@@ -20,7 +20,8 @@ public class BeanRedditThread implements Serializable {
 	private Long upVotes;
 	private String linkToComments;
 
-	public BeanRedditThread(String subRedditName, String threadName, String threadLink, String upVotes, String linkToComemnts) {
+	public BeanRedditThread(final String subRedditName, final String threadName, final String threadLink, 
+			final String upVotes, final String linkToComemnts) {
 		this.subRedditName = subRedditName;
 		this.threadName = threadName;
 		this.threadLink = threadLink;

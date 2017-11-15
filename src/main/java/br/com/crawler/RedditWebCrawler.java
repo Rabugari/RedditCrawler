@@ -32,7 +32,7 @@ public class RedditWebCrawler {
 	 * @param rawSubReddits - 1-n subreddits- separados por ;
 	 * @return
 	 */
-	public String getTopThreads(String rawSubReddits) {
+	public String getTopThreads(final String rawSubReddits) {
 		StringBuilder sbAllTopThreads = new StringBuilder();
 
 		List<String> subReddits = splitThreads(rawSubReddits);
@@ -54,7 +54,7 @@ public class RedditWebCrawler {
 	 * @param threads
 	 * @return
 	 */
-	public List<String> splitThreads(String threads) {
+	public List<String> splitThreads(final String threads) {
 		return Arrays.asList(threads.split(DELIMITADOR_PARA_THREADS));
 	}
 
@@ -63,7 +63,7 @@ public class RedditWebCrawler {
 	 * @param subReddit - 1 subreddit
 	 * @return
 	 */
-	public String getThreads(String subReddit) {
+	public String getThreads(final String subReddit) {
 
 		StringBuilder sbThreadRank = new StringBuilder();
 		List<BeanRedditThread> topThreads = new ArrayList<>();
