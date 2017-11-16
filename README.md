@@ -12,7 +12,7 @@ A aplicação também contém uma integração com o Telegram, para adicionar a funcio
 
 	/NadaPraFazer [+ Lista de subrredits] (ex.: /NadaPraFazer programming;dogs;brazil)
 	
-O link para o robo: t.me/TopThreadRedditBot)
+O link para o robo: t.me/TopThreadRedditBot
 
 ## Getting Started
 Para a integração com o Telegram funcionar, esta aplicação precisa esta no ar. 
