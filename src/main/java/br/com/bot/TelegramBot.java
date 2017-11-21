@@ -68,7 +68,8 @@ public class TelegramBot extends TelegramLongPollingBot {
 				message.setText(EmojiParser.parseToUnicode("Não há threads populares o sub-reddit ("+subReddit+")  :disappointed:"));
 			else
 				message.setText(topThreads);
-		 	sendMessage(messageReceived, message);
+//		 	sendMessage(message);
+		 	sendApiMethod(message);
 		}
 	}
 
