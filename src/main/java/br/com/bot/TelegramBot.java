@@ -35,7 +35,6 @@ public class TelegramBot extends TelegramLongPollingBot {
 	
 	private RedditWebCrawler webCrawler;
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	public void onUpdateReceived(final Update update) {
 		try {
@@ -52,7 +51,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 			    	sendMessage(messageReceived, message);
 			    }else {
 			    	message.setText(EmojiParser.parseToUnicode("Como ? não entendi ... :sweat:"));
-			    	sendMessage(message);
+			    	sendMessage(messageReceived, message);
 			    }
 			}
 		} catch (TelegramApiException e) {
@@ -60,7 +59,6 @@ public class TelegramBot extends TelegramLongPollingBot {
 		}
 	}
 
-	@SuppressWarnings("deprecation")
 	private void sendMessage(final String messageReceived, final SendMessage message) throws TelegramApiException {
 		List<String> subReddits = webCrawler.splitThreads(messageReceived.replaceAll(COMMAND_NAME, "").trim());
 		
@@ -70,7 +68,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 				message.setText(EmojiParser.parseToUnicode("Não há threads populares o sub-reddit ("+subReddit+")  :disappointed:"));
 			else
 				message.setText(topThreads);
-		 	sendMessage(message);
+		 	sendMessage(messageReceived, message);
 		}
 	}
 
